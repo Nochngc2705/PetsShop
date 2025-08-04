@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang Chủ - Tạo Tài Khoản</title>
-    <!-- font awesome cdn link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="../style/home.css" />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/register.css" />
@@ -20,18 +23,34 @@
       <nav class="navbar">
         <a href="home.html">Trang chủ</a>
         <a href="about.html">Giới thiệu</a>
-        <a href="products.html">Danh mục sản phẩm</a>
+        <div class="dropdown">
+          <a href="products.html">Danh mục sản phẩm ▾</a>
+          <div class="dropdown-content">
+            <a href="products-dog.html">Chó</a>
+            <a href="products-cat.html">Mèo</a>
+            <a href="products-bath.html">Sữa tắm</a>
+          </div>
+        </div>
         <a href="reviews.html">Đánh giá</a>
         <a href="contact.html">Liên hệ</a>
       </nav>
+      <form method="get" class="search-form">
+        <input
+          type="text"
+          name="product_name"
+          class="search-input"
+          placeholder="Tên sản phẩm"
+        />
+        <button type="submit" class="search-btn">Tìm kiếm</button>
+      </form>
 
       <div class="icons">
-        <a href="#" class="fas fa-heart"></a>
-        <a href="#" class="fas fa-shopping-cart"></a>
-        <a href="login.html" class="fas fa-user"></a>
+        <a href="favorite.html" class="fas fa-heart"></a>
+        <a href="cart.html" class="fas fa-shopping-cart"></a>
+        <a href="login.html" class="fas fa-user" id="user-icon"></a>
       </div>
     </header>
-
+<main>
     <div class="page-wrapper">
       <div class="content">
         <div class="container">
@@ -40,7 +59,11 @@
           </div>
           <h1>TẠO TÀI KHOẢN</h1>
           <p>Vui lòng điền đầy đủ thông tin để tạo tài khoản</p>
-          <form action="#" method="post">
+          <form action="#" method="post" id="register-form">
+            <div class="form-group">
+              <label for="username">Tên đăng nhập</label>
+              <input type="text" id="username" name="username" required />
+            </div>
             <div class="form-group">
               <label for="name">Tên</label>
               <input type="text" id="name" name="name" required />
@@ -61,7 +84,7 @@
           </form>
         </div>
       </div>
-
+</main>
       <footer class="footer">
         <div class="footer-container">
           <div class="footer-column">
@@ -74,7 +97,6 @@
               <li><a href="contact.html">Liên hệ</a></li>
             </ul>
           </div>
-
           <div class="footer-column">
             <h3>Liên kết cá nhân</h3>
             <ul>
@@ -83,7 +105,6 @@
               <li><a href="#">Danh sách yêu thích</a></li>
             </ul>
           </div>
-
           <div class="footer-column">
             <h3>Thông tin liên hệ</h3>
             <ul>
@@ -93,11 +114,68 @@
             </ul>
           </div>
         </div>
-
         <div class="footer-bottom">
           &copy; 2025 Tran Project. All rights reserved.
         </div>
       </footer>
     </div>
+
+    <script>
+      document
+        .getElementById("register-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const username = document.getElementById("username").value;
+          const name = document.getElementById("name").value;
+          const surname = document.getElementById("surname").value;
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          // Lấy danh sách tài khoản từ localStorage
+          let users = JSON.parse(localStorage.getItem("users")) || [];
+
+          // Kiểm tra xem username hoặc email đã tồn tại chưa
+          const userExists = users.some(
+            (user) => user.username === username || user.email === email
+          );
+          if (userExists) {
+            alert("Tên đăng nhập hoặc email đã tồn tại!");
+            return;
+          }
+
+          // Thêm tài khoản mới
+          users.push({ username, name, surname, email, password });
+          localStorage.setItem("users", JSON.stringify(users));
+
+          alert("Đăng ký thành công! Vui lòng đăng nhập.");
+          window.location.href = "login.html";
+        });
+
+      // Kiểm tra trạng thái đăng nhập để cập nhật icon user
+      function updateUserIcon() {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        const userIcon = document.getElementById("user-icon");
+        if (loggedInUser) {
+          userIcon.classList.remove("fa-user");
+          userIcon.classList.add("fa-sign-out-alt");
+          userIcon.title = "Đăng xuất";
+          userIcon.addEventListener("click", function (e) {
+            e.preventDefault();
+            localStorage.removeItem("loggedInUser");
+            alert("Đã đăng xuất!");
+            window.location.href = "login.html";
+          });
+        } else {
+          userIcon.classList.remove("fa-sign-out-alt");
+          userIcon.classList.add("fa-user");
+          userIcon.title = "Đăng nhập";
+          userIcon.href = "login.html";
+        }
+      }
+
+      // Gọi hàm cập nhật icon khi tải trang
+      updateUserIcon();
+    </script>
   </body>
 </html>

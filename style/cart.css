@@ -1,0 +1,124 @@
+/* Định dạng chung cho bảng */
+table {
+    width           : 100%;
+    max-width       : 1200px;
+    margin          : 120px auto 40px auto;
+    /* Khoảng cách trên để tránh header, căn giữa */
+    border-collapse : collapse;
+    background-color: #fff;
+    box-shadow      : 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Định dạng header của bảng */
+thead {
+    background-color: #f8b400;
+    color           : #fff;
+}
+
+th,
+td {
+    padding       : 15px;
+    text-align    : center;
+    border-bottom : 1px solid #ddd;
+    vertical-align: middle;
+    /* Căn giữa theo chiều dọc */
+}
+
+th {
+    font-size  : 1.1em;
+    font-weight: bold;
+}
+
+/* Định dạng hình ảnh trong bảng */
+td img {
+    max-width    : 60px;
+    height       : auto;
+    border-radius: 5px;
+}
+
+/* Định dạng cột số lượng */
+ttd:nth-child(3) {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    gap            : 8px;
+    min-width      : 120px;
+    /* Đảm bảo cột có chiều rộng tối thiểu */
+}
+
+/* Đảm bảo số lượng hiển thị thẳng hàng */
+td:nth-child(3) span {
+    min-width : 30px;
+    /* Tăng min-width để cố định kích thước số lượng */
+    text-align: center;
+    display   : inline-block;
+    /* Đảm bảo số lượng là một khối cố định */
+}
+
+/* Định dạng nút cộng, trừ */
+td button {
+    background-color: #f8b400;
+    color           : #fff;
+    border          : none;
+    padding         : 5px 10px;
+    cursor          : pointer;
+    border-radius   : 5px;
+    font-size       : 1em;
+    transition      : background-color 0.3s;
+    min-width       : 30px;
+    /* Đảm bảo nút có kích thước đồng đều */
+    line-height     : 1.2;
+    text-align      : center;
+    /* Căn giữa nội dung trong nút */
+}
+
+/* Định dạng nút xóa */
+td button:last-child {
+    background-color: #ff4d4d;
+}
+
+td button:hover {
+    background-color: #e0a800;
+}
+
+td button:last-child:hover {
+    background-color: #e63939;
+}
+
+/* Định dạng tổng thanh toán */
+tfoot {
+    font-weight: bold;
+    font-size  : 1.2em;
+}
+
+tfoot td {
+    padding: 20px;
+}
+
+/* Responsive cho thiết bị nhỏ */
+@media (max-width: 768px) {
+    table {
+        margin: 100px auto 20px auto;
+    }
+
+    th,
+    td {
+        padding  : 10px;
+        font-size: 0.9em;
+    }
+
+    td img {
+        max-width: 40px;
+    }
+
+    td button {
+        padding  : 3px 8px;
+        font-size: 0.9em;
+        min-width: 25px;
+    }
+
+    td:nth-child(3) {
+        min-width: 100px;
+        /* Giảm chiều rộng tối thiểu cho thiết bị nhỏ */
+    }
+}

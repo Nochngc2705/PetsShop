@@ -4,19 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ruby Pets Shop - Trang mua sắm các sản phẩm dành cho thú cưng</title>
-
-    <!-- font awesome cdn link -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <!-- custom css file link -->
     <link rel="stylesheet" href="../style/home.css" />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/footer.css" />
+    <link rel="stylesheet" href="../style/cart.css" />
   </head>
   <body>
-    <!-- header section starts -->
     <header>
       <input type="checkbox" name="" id="toggler" />
       <label for="toggler" class="fas fa-bars"></label>
@@ -32,14 +29,36 @@
       </nav>
 
       <div class="icons">
-        <a href="#" class="fas fa-heart"></a>
-        <a href="#" class="fas fa-shopping-cart"></a>
-        <a href="#" class="fas fa-user"></a>
+        <a href="favorite.html" class="fas fa-heart"></a>
+        <a href="cart.html" class="fas fa-shopping-cart"></a>
+        <a href="login.html" class="fas fa-user" id="user-icon"></a>
       </div>
     </header>
-
-    <!-- header section ends -->
-
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Hình ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Giá</th>
+            <th>Thành tiền</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody id="cart-body">
+          <!-- sản phẩm sẽ được render ở đây -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" style="text-align: right">
+              <strong>Tổng thanh toán:</strong>
+            </td>
+            <td colspan="2" id="tong-tien">0đ</td>
+          </tr>
+        </tfoot>
+      </table>
+    </main>
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-column">
@@ -52,7 +71,6 @@
             <li><a href="contact.html">Liên hệ</a></li>
           </ul>
         </div>
-
         <div class="footer-column">
           <h3>Liên kết cá nhân</h3>
           <ul>
@@ -61,7 +79,6 @@
             <li><a href="#">Danh sách yêu thích</a></li>
           </ul>
         </div>
-
         <div class="footer-column">
           <h3>Thông tin liên hệ</h3>
           <ul>
@@ -71,10 +88,91 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>©2025 Ruby Pets Shop. All Rights Reserved.</p>
       </div>
     </footer>
+
+    <script>
+      // Kiểm tra trạng thái đăng nhập
+      const username = localStorage.getItem("loggedInUser");
+      if (!username) {
+        alert("Vui lòng đăng nhập để xem giỏ hàng!");
+        window.location.href = "login.html";
+      }
+
+      let cartData = JSON.parse(localStorage.getItem(username + "_cart")) || [];
+
+      const tbody = document.getElementById("cart-body");
+      const tongTienEl = document.getElementById("tong-tien");
+
+      function renderCart() {
+        tbody.innerHTML = "";
+        let tongTien = 0;
+
+        cartData.forEach((item, index) => {
+          const giaSo = parseInt(item.gia.replace(/[^\d]/g, ""));
+          const thanhTien = giaSo * item.soLuong;
+          tongTien += thanhTien;
+
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td><img src="${item.hinhAnh}" width="60"/></td>
+            <td>${item.tenSanPham}</td>
+            <td>
+              <button onclick="thayDoiSoLuong(${index}, -1)">➖</button>
+              <span>${item.soLuong}</span>
+              <button onclick="thayDoiSoLuong(${index}, 1)">➕</button>
+            </td>
+            <td>${item.gia}</td>
+            <td>${thanhTien.toLocaleString()}đ</td>
+            <td><button onclick="xoaSanPham(${index})">❌ Xoá</button></td>
+          `;
+          tbody.appendChild(row);
+        });
+
+        tongTienEl.innerText = tongTien.toLocaleString() + "đ";
+        localStorage.setItem(username + "_cart", JSON.stringify(cartData));
+      }
+
+      function thayDoiSoLuong(index, thayDoi) {
+        cartData[index].soLuong += thayDoi;
+        if (cartData[index].soLuong < 1) cartData[index].soLuong = 1;
+        renderCart();
+      }
+
+      function xoaSanPham(index) {
+        cartData.splice(index, 1);
+        renderCart();
+      }
+
+      // Kiểm tra trạng thái đăng nhập để cập nhật icon user
+      function updateUserIcon() {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        const userIcon = document.getElementById("user-icon");
+        if (loggedInUser) {
+          userIcon.classList.remove("fa-user");
+          userIcon.classList.add("fa-sign-out-alt");
+          userIcon.title = "Đăng xuất";
+          userIcon.addEventListener("click", function (e) {
+            e.preventDefault();
+            localStorage.removeItem("loggedInUser");
+            alert("Đã đăng xuất!");
+            window.location.href = "login.html";
+          });
+        } else {
+          userIcon.classList.remove("fa-sign-out-alt");
+          userIcon.classList.add("fa-user");
+          userIcon.title = "Đăng nhập";
+          userIcon.href = "login.html";
+        }
+      }
+
+      // Gọi hàm cập nhật icon khi tải trang
+      updateUserIcon();
+
+      // Render lần đầu
+      renderCart();
+    </script>
   </body>
 </html>

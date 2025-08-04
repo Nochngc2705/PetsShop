@@ -2,8 +2,6 @@
     --pink: #F4C2D7;
 }
 
-
-
 * {
     margin         : 0;
     padding        : 0;
@@ -13,15 +11,6 @@
     border         : none;
     text-decoration: none;
     transition     : .2s linear;
-}
-
-
-
-html {
-    font-size         : 62.5%;
-    scroll-behavior   : smooth;
-    scroll-padding-top: 6rem;
-    overflow-x        : hidden;
 }
 
 section {
@@ -34,7 +23,7 @@ section {
     color     : #333;
     padding   : 1rem;
     margin    : 2rem 0;
-    background: rbga(255, 51, 153, .05);
+    background: rgba(255, 51, 153, .05);
 }
 
 .heading span {
@@ -84,10 +73,7 @@ header .navbar a {
     font-size: 2rem;
     padding  : 0 1.5rem;
     color    : #444444;
-    ;
 }
-
-
 
 header .navbar a:hover {
     color: #b94360;
@@ -126,7 +112,6 @@ header .navbar a:hover {
     display: block;
 }
 
-
 header .icons a {
     font-size  : 2.5rem;
     color      : #333;
@@ -151,21 +136,15 @@ header .fa-bars {
     display      : none;
 }
 
-/* Search form styling */
 header .search-form {
     display         : flex;
     align-items     : center;
     background-color: var(--pink);
-    /* Theme color #F4C2D7 */
     padding         : 0.8rem;
     border-radius   : 3rem;
-    /* Rounded corners for a modern look */
     max-width       : 40rem;
-    /* Consistent with rem-based sizing */
     margin-left     : auto;
-    /* Push to the right */
     box-shadow      : 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
-    /* Subtle shadow */
 }
 
 header .search-form .search-input {
@@ -181,9 +160,7 @@ header .search-form .search-input {
 
 header .search-form .search-input:focus {
     border-color: #b94360;
-    /* Theme hover color */
     box-shadow  : 0 0 0.5rem rgba(185, 67, 96, 0.3);
-    /* Subtle glow */
     outline     : none;
 }
 
@@ -203,12 +180,7 @@ header .search-form .search-input:focus {
     transform       : scale(1.05);
 }
 
-/* ---------- PC dưới 991px ---------- */
 @media (max-width: 991px) {
-    html {
-        font-size: 55%;
-    }
-
     header {
         padding: 2rem;
     }
@@ -216,10 +188,8 @@ header .search-form .search-input:focus {
     section {
         padding: 2rem;
     }
-
 }
 
-/* ---------- Tablet dưới 768px ---------- */
 @media (max-width: 768px) {
     header .fa-bars {
         display: block;
@@ -248,18 +218,8 @@ header .search-form .search-input:focus {
     }
 }
 
-/* ---------- Điện thoại nhỏ dưới 450px ---------- */
 @media (max-width: 450px) {
-    html {
-        font-size: 50%;
-    }
-
-    .heading {
-        font-size: 3rem;
-    }
-
     header {
         padding: 2rem;
     }
-
 }

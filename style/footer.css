@@ -1,8 +1,50 @@
+html,
+body {
+    height : 100%;
+    margin : 0;
+    padding: 0;
+}
+
+html {
+    font-size         : 62.5%;
+    /* Thống nhất font-size từ style.css */
+    scroll-behavior   : smooth;
+    scroll-padding-top: 6rem;
+    overflow-x        : hidden;
+}
+
+body {
+    display       : flex;
+    flex-direction: column;
+    min-height    : 100vh;
+    font-family   : 'Segoe UI', sans-serif;
+    /* Thống nhất font-family */
+}
+
+main {
+    flex       : 1 0 auto;
+    padding-top: 80px;
+    /* Bù cho header cố định (điều chỉnh nếu cần) */
+}
+
+/* Ghi đè các container để tránh khoảng trống dư thừa */
+.page-wrapper,
+.home,
+.contact,
+.reviews,
+.products .box-container,
+table {
+    min-height    : auto !important;
+    margin-bottom : 0 !important;
+    padding-bottom: 0 !important;
+}
+
 .footer {
     background-color: #f9f9f9;
     color           : #333;
     padding         : 3rem 2rem;
     font-family     : 'Segoe UI', sans-serif;
+    flex-shrink     : 0;
 }
 
 .footer-container {
@@ -16,7 +58,6 @@
     flex      : 1 1 250px;
     min-width : 200px;
     text-align: center;
-
 }
 
 .footer-column h3 {
@@ -39,20 +80,12 @@
     text-decoration: none;
     color          : #333;
     transition     : color 0.2s ease;
+    font-size      : 2rem;
 }
 
 .footer-column ul li a:hover {
     color: #b94360;
 }
-
-.footer-column ul li a {
-    font-size      : 2rem;
-    /* Tăng lên từ 0.8rem hoặc 14px nếu đang thấp */
-    text-decoration: none;
-    color          : #333;
-    transition     : color 0.2s ease;
-}
-
 
 .footer-column img {
     margin-top: 1rem;
@@ -66,4 +99,17 @@
     padding-top: 1rem;
     border-top : 1px solid #ccc;
     color      : #555;
+}
+
+/* Responsive font-size */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
 }

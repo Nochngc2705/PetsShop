@@ -1,27 +1,34 @@
 .home {
     display            : flex;
-    align-items        : center;
-    min-height         : 100vh;
+    flex-direction     : column;
+    /* Xếp dọc */
+    align-items        : flex-start;
+    /* Căn trái */
+    justify-content    : flex-start;
+    /* Căn trên */
     background-image   : url("../image/background.png");
     background-repeat  : no-repeat;
     background-size    : cover;
     background-position: center;
-    padding-top        : 12rem;
+    padding-top        : 40rem;
+    /* Giữ để tránh header cố định */
+    padding-left       : 2rem;
+    /* Thêm padding trái để căn chỉnh */
 }
 
-/* .home .content{
-    max-width: 50rem;
-} */
+.home .content {
+    max-width     : 800px;
+    padding-left  : 4rem;
+    padding-bottom: 25rem;
+    /* Giới hạn chiều rộng nội dung */
+}
 
 .home .content h3 {
     font-size  : 6rem;
     color      : #333;
     white-space: nowrap;
-
 }
 
-
-/* chỉnh cho "thức ăn và đồ dùng dành cho thú cưng" */
 .home .content span {
     font-size     : 3.5rem;
     color         : #b94360;
@@ -31,7 +38,6 @@
     text-transform: capitalize;
 }
 
-/* chỉnh cho đoạn gthieu Ruby Pets shop tự hào là... */
 .home .content p {
     max-width  : 800px;
     width      : 100%;
@@ -47,12 +53,7 @@
     background-color: #b94360;
 }
 
-/* ---------- PC dưới 991px ---------- */
 @media (max-width: 991px) {
-    html {
-        font-size: 55%;
-    }
-
     header {
         padding: 2rem;
     }
@@ -65,9 +66,9 @@
         padding            : 2rem;
         padding-top        : 12rem;
         background-position: center;
-        /* center lại cho cân đối */
         flex-direction     : column;
-        text-align         : center;
+        align-items        : flex-start;
+        /* Căn trái trên thiết bị nhỏ */
     }
 
     .home .content {
@@ -91,7 +92,6 @@
     }
 }
 
-/* ---------- Tablet dưới 768px ---------- */
 @media (max-width: 768px) {
     header .fa-bars {
         display: block;
@@ -132,12 +132,7 @@
     }
 }
 
-/* ---------- Điện thoại nhỏ dưới 450px ---------- */
 @media (max-width: 450px) {
-    html {
-        font-size: 50%;
-    }
-
     .heading {
         font-size: 3rem;
     }
