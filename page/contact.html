@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liên hệ - Ruby Pets Shop</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style/contact.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/footer.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <input type="checkbox" id="toggler" />
+      <label for="toggler" class="fas fa-bars"></label>
+
+      <a href="#" class="logo">Ruby Pets Shop<span>.</span></a>
+
+      <nav class="navbar">
+        <a href="home.html">Trang chủ</a>
+        <a href="about.html">Giới thiệu</a>
+
+        <div class="dropdown">
+          <a href="products.html">Danh mục sản phẩm ▾</a>
+          <div class="dropdown-content">
+            <a href="products-dog.html">Chó</a>
+            <a href="products-cat.html">Mèo</a>
+            <a href="products-bath.html">Sữa tắm</a>
+          </div>
+        </div>
+
+        <a href="reviews.html">Đánh giá</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+
+      <div class="icons">
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="login.html" class="fas fa-user"></a>
+      </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h1 class="heading"><span>Liên hệ</span> với chúng tôi</h1>
+
+      <div class="row">
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.7027855047654!2d106.67316018693961!3d10.75737393220288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f02cbde57ef%3A0xbd45590400ebdfde!2zMTIzIEzDqiBI4buTbmcgUGhvbmcsIFBoxrDhu51uZyAyLCBRdeG6rW4gNSwgSOG7kyBDaMOtIE1pbmggNzAwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1754240345400!5m2!1svi!2s"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+
+        <form action="#" method="post">
+          <input type="text" placeholder="Họ và tên" class="box" required />
+          <input type="email" placeholder="Email" class="box" required />
+          <input type="tel" placeholder="Số điện thoại" class="box" />
+          <textarea
+            placeholder="Nội dung liên hệ..."
+            class="box"
+            required
+          ></textarea>
+          <input type="submit" value="Gửi liên hệ" class="btn" />
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Lối tắt</h3>
+          <ul>
+            <li><a href="home.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="products.html">Danh mục sản phẩm</a></li>
+            <li><a href="reviews.html">Đánh giá</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Liên kết cá nhân</h3>
+          <ul>
+            <li><a href="#">Tài khoản của tôi</a></li>
+            <li><a href="#">Đơn hàng của tôi</a></li>
+            <li><a href="#">Danh sách yêu thích</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Thông tin liên hệ</h3>
+          <ul>
+            <li><a href="#">📞 +84 776147461</a></li>
+            <li><a href="#">📧 ngoctth27052004@gmail.com</a></li>
+            <li><a href="#">📍 123 Lê Hồng Phong, Phường 2, Quận 5</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>©2025 Ruby Pets Shop. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

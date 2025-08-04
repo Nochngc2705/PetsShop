@@ -1,0 +1,107 @@
+   .about {
+       background-color: #fff5f7;
+       /* hồng pastel nhẹ */
+   }
+
+   .about .heading {
+       padding-top: 8rem;
+   }
+
+   .about .row {
+       display        : flex;
+       flex-wrap      : wrap;
+       gap            : 2rem;
+       align-items    : flex-start;
+       justify-content: center;
+   }
+
+   .about .row .content {
+       flex            : 1 1 60rem;
+       background-color: #fff;
+       padding         : 3rem;
+       border-radius   : 2rem;
+       box-shadow      : 0 0.8rem 2rem rgba(0, 0, 0, 0.05);
+       line-height     : 1.8;
+   }
+
+   .about .row .content h2 {
+       font-size    : 3rem;
+       color        : #b94360;
+       margin-bottom: 2rem;
+       text-align   : center;
+   }
+
+   .about .row .content h3 {
+       font-size : 2rem;
+       color     : #333;
+       margin-top: 2rem;
+   }
+
+   .about .content a:hover {
+       background-color: #b94360;
+   }
+
+   .about .row .content ul {
+       margin-left  : 2rem;
+       margin-bottom: 2rem;
+   }
+
+   .about .row .content ul li {
+       margin    : 1rem 0;
+       list-style: square;
+   }
+
+   .about .row .content ul li a {
+       font-size      : 1.6rem;
+       color          : #b94360;
+       text-decoration: none;
+       transition     : color 0.3s ease;
+   }
+
+   .about .row .content ul li a:hover {
+       color          : #b94360;
+       text-decoration: underline;
+   }
+
+   .about .row .content p {
+       font-size : 1.6rem;
+       color     : #555;
+       text-align: justify;
+       margin-top: 1rem;
+   }
+
+   .icons-container {
+       background    : #eee;
+       display       : flex;
+       flex-wrap     : wrap;
+       gap           : 1.5rem;
+       padding-top   : 5rem;
+       padding-bottom: 5rem;
+   }
+
+   .icons-cons {
+       max-width  : 100%;
+       width      : 100%;
+       background : #fff;
+       border     : 1rem solid rgba(0, 0, 0, .1);
+       padding    : 2rem;
+       display    : flex;
+       align-items: center;
+       flex       : 1 1 25rem;
+   }
+
+   .icons-container .icons-cons img {
+       height      : 5rem;
+       margin-right: 2rem;
+   }
+
+   .icons-container .icons-cons h3 {
+       color         : #333;
+       padding-bottom: .5rem;
+       font-size     : 1.5rem;
+   }
+
+   .icons-container .icons-cons span {
+       color    : #555;
+       font-size: 1.3rem;
+   }

@@ -1,0 +1,160 @@
+.home {
+    display            : flex;
+    align-items        : center;
+    min-height         : 100vh;
+    background-image   : url("../image/background.png");
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    background-position: center;
+    padding-top        : 12rem;
+}
+
+/* .home .content{
+    max-width: 50rem;
+} */
+
+.home .content h3 {
+    font-size  : 6rem;
+    color      : #333;
+    white-space: nowrap;
+
+}
+
+
+/* chỉnh cho "thức ăn và đồ dùng dành cho thú cưng" */
+.home .content span {
+    font-size     : 3.5rem;
+    color         : #b94360;
+    padding       : 1rem 0;
+    line-height   : 1.5;
+    white-space   : nowrap;
+    text-transform: capitalize;
+}
+
+/* chỉnh cho đoạn gthieu Ruby Pets shop tự hào là... */
+.home .content p {
+    max-width  : 800px;
+    width      : 100%;
+    font-size  : 2rem;
+    color      : #333;
+    padding    : 1rem 0;
+    line-height: 1.5;
+    white-space: normal;
+    text-align : justify;
+}
+
+.home .content a:hover {
+    background-color: #b94360;
+}
+
+/* ---------- PC dưới 991px ---------- */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    .home {
+        padding            : 2rem;
+        padding-top        : 12rem;
+        background-position: center;
+        /* center lại cho cân đối */
+        flex-direction     : column;
+        text-align         : center;
+    }
+
+    .home .content {
+        max-width: 100%;
+        padding  : 2rem;
+    }
+
+    .home .content h3 {
+        font-size  : 4rem;
+        white-space: normal;
+    }
+
+    .home .content span {
+        font-size  : 2.8rem;
+        white-space: normal;
+    }
+
+    .home .content p {
+        font-size  : 1.8rem;
+        white-space: normal;
+    }
+}
+
+/* ---------- Tablet dưới 768px ---------- */
+@media (max-width: 768px) {
+    header .fa-bars {
+        display: block;
+    }
+
+    header .navbar {
+        position  : absolute;
+        top       : 100%;
+        left      : 0;
+        right     : 0;
+        background: #eee;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        clip-path : polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header #toggler:checked~.navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a {
+        margin    : 1.5rem;
+        padding   : 1.5rem;
+        background: #fff;
+        border    : 0.1rem solid rgba(0, 0, 0, 0.1);
+        display   : block;
+    }
+
+    .home .content h3 {
+        font-size: 3.6rem;
+    }
+
+    .home .content span {
+        font-size: 2.3rem;
+    }
+
+    .home .content p {
+        font-size: 1.6rem;
+    }
+}
+
+/* ---------- Điện thoại nhỏ dưới 450px ---------- */
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    .home .content h3 {
+        font-size: 2.8rem;
+    }
+
+    .home .content span {
+        font-size: 1.8rem;
+    }
+
+    .home .content p {
+        font-size: 1.4rem;
+    }
+}

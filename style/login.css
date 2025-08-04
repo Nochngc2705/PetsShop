@@ -1,0 +1,183 @@
+body {
+    margin             : 0;
+    font-family        : "Segoe UI", sans-serif;
+    background-color   : #fff;
+    min-height         : 100vh;
+    display            : flex;
+    flex-direction     : column;
+    background-image   : url("../image/background.png");
+    background-size    : cover;
+    background-position: center;
+}
+
+.page-wrapper {
+    display       : flex;
+    flex-direction: column;
+    min-height    : 100vh;
+}
+
+.content {
+    flex           : 1;
+    display        : flex;
+    justify-content: flex-start;
+    align-items    : center;
+    padding        : 2rem;
+    gap            : 2rem;
+    flex-direction : row-reverse;
+}
+
+.login-container {
+    flex           : 1;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    padding        : 2rem;
+}
+
+.login-form {
+    text-align   : center;
+    background   : #fff;
+    padding      : 3rem;
+    /* Matches register form padding */
+    border-radius: 10px;
+    box-shadow   : 0 4px 8px rgba(0, 0, 0, 0.1);
+    width        : 100%;
+    max-width    : 500px;
+    /* Matches register form max-width */
+    margin-right : 1000px;
+    /* Matches register form right shift */
+}
+
+.headerform {
+    background-color       : #ffc2d1;
+    /* Matches register header color */
+    color                  : #fff;
+    padding                : 1.5rem;
+    /* Matches register header padding */
+    margin                 : -3rem -3rem 2rem -3rem;
+    /* Adjusted to match increased padding */
+    border-top-left-radius : 10px;
+    border-top-right-radius: 10px;
+}
+
+.headerform a {
+    color          : #070202;
+    text-decoration: none;
+    font-size      : 2.5rem;
+    /* Matches register header font size */
+}
+
+h2 {
+    margin   : 0 0 1.5rem;
+    /* Matches register h1 margin */
+    font-size: 2rem;
+    /* Matches register h1 font size */
+    color    : #b94360;
+    /* Keeps login-specific color, adjust to #333 if desired */
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    /* Matches register form-group margin */
+    text-align   : left;
+}
+
+.input-group label {
+    display      : block;
+    margin-bottom: 0.75rem;
+    /* Matches register label margin */
+    font-weight  : bold;
+    font-size    : 1.2rem;
+    /* Matches register label font size */
+}
+
+.input-group input {
+    width        : 100%;
+    padding      : 1.25rem;
+    /* Matches register input padding */
+    border       : 2px solid #ccc;
+    /* Matches register input border */
+    border-radius: 30px;
+    /* Matches register input radius */
+    font-size    : 1.2rem;
+    /* Matches register input font size */
+    box-sizing   : border-box;
+}
+
+.btn {
+    background-color: #fff;
+    /* Matches register button background */
+    color           : #070505;
+    /* Matches register button color */
+    padding         : 1.25rem 3rem;
+    /* Matches register button padding */
+    border          : 2px solid;
+    /* Matches register button border */
+    border-radius   : 30px;
+    /* Matches register button radius */
+    font-size       : 1.2rem;
+    /* Matches register button font size */
+    cursor          : pointer;
+    width           : 100%;
+    margin-top      : 2rem;
+    /* Matches register button margin */
+}
+
+.btn:hover {
+    background-color: #ffc2d1;
+    /* Matches register button hover */
+}
+
+.register-link {
+    margin-top: 1.5rem;
+    /* Matches register link margin */
+}
+
+.image-section {
+    flex           : 1;
+    max-width      : 50%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.image-section img {
+    max-width: 100%;
+    height   : auto;
+}
+
+.footer {
+    background-color: #f9f9f9;
+    padding         : 2rem;
+    width           : 100%;
+}
+
+.footer-container {
+    display        : flex;
+    justify-content: space-around;
+    flex-wrap      : wrap;
+}
+
+.footer-column {
+    margin: 1rem;
+}
+
+.footer-column h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding   : 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    text-align : center;
+    padding-top: 1rem;
+    border-top : 1px solid #ddd;
+    margin-top : 1rem;
+}

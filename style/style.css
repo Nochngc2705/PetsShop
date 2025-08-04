@@ -1,0 +1,265 @@
+:root {
+    --pink: #F4C2D7;
+}
+
+
+
+* {
+    margin         : 0;
+    padding        : 0;
+    box-sizing     : border-box;
+    font-family    : Verdana, Geneva, Tahoma, sans-serif;
+    outline        : none;
+    border         : none;
+    text-decoration: none;
+    transition     : .2s linear;
+}
+
+
+
+html {
+    font-size         : 62.5%;
+    scroll-behavior   : smooth;
+    scroll-padding-top: 6rem;
+    overflow-x        : hidden;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    font-size : 4rem;
+    color     : #333;
+    padding   : 1rem;
+    margin    : 2rem 0;
+    background: rbga(255, 51, 153, .05);
+}
+
+.heading span {
+    color: #ff7f9c;
+}
+
+.content .btn {
+    display      : inline-block;
+    margin-top   : 1rem;
+    border-radius: 5rem;
+    background   : #333;
+    color        : #fff;
+    padding      : .9rem 3.5rem;
+    cursor       : pointer;
+    font-size    : 1.7rem;
+}
+
+.content .btn:hover {
+    background: #b94360;
+}
+
+header {
+    position       : fixed;
+    top            : 0;
+    left           : 0;
+    right          : 0;
+    background     : #ffc2d1;
+    padding        : 2rem 9%;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    z-index        : 1000;
+    box-shadow     : 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+header .logo {
+    font-size  : 3rem;
+    color      : #333;
+    font-weight: bolder;
+}
+
+header .logo span {
+    color: var(--pink);
+}
+
+header .navbar a {
+    font-size: 2rem;
+    padding  : 0 1.5rem;
+    color    : #444444;
+    ;
+}
+
+
+
+header .navbar a:hover {
+    color: #b94360;
+}
+
+.navbar .dropdown {
+    position: relative;
+    display : inline-block;
+}
+
+.dropdown-content {
+    display         : none;
+    position        : absolute;
+    background-color: rgb(255, 194, 209);
+    min-width       : 180px;
+    box-shadow      : 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index         : 1;
+}
+
+.dropdown-content a {
+    display        : block;
+    padding        : 12px 16px;
+    color          : #333;
+    text-decoration: none;
+    font-size      : 1.6rem;
+    margin-top     : 2rem;
+    margin-bottom  : 2rem;
+    width          : 250px;
+}
+
+.dropdown-content a:hover {
+    color: #b94360;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+header .icons a {
+    font-size  : 2.5rem;
+    color      : #333;
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover {
+    color: #b94360;
+}
+
+header #toggler {
+    display: none;
+}
+
+header .fa-bars {
+    font-size    : 3rem;
+    color        : #333;
+    border-radius: .5rem;
+    padding      : .5rem 1.5rem;
+    cursor       : pointer;
+    border       : .1rem solid rgba(0, 0, 0, .3);
+    display      : none;
+}
+
+/* Search form styling */
+header .search-form {
+    display         : flex;
+    align-items     : center;
+    background-color: var(--pink);
+    /* Theme color #F4C2D7 */
+    padding         : 0.8rem;
+    border-radius   : 3rem;
+    /* Rounded corners for a modern look */
+    max-width       : 40rem;
+    /* Consistent with rem-based sizing */
+    margin-left     : auto;
+    /* Push to the right */
+    box-shadow      : 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+header .search-form .search-input {
+    flex            : 1;
+    padding         : 0.8rem 1.2rem;
+    font-size       : 1.6rem;
+    border          : 0.1rem solid #ccc;
+    border-radius   : 3rem;
+    background-color: #fff;
+    color           : #333;
+    transition      : border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header .search-form .search-input:focus {
+    border-color: #b94360;
+    /* Theme hover color */
+    box-shadow  : 0 0 0.5rem rgba(185, 67, 96, 0.3);
+    /* Subtle glow */
+    outline     : none;
+}
+
+.search-btn {
+    margin-left     : 1rem;
+    background-color: #333;
+    color           : #fff;
+    padding         : 1rem;
+    border-radius   : 1rem;
+    font-size       : 1.6rem;
+    cursor          : pointer;
+    transition      : background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-btn:hover {
+    background-color: #b94360;
+    transform       : scale(1.05);
+}
+
+/* ---------- PC dưới 991px ---------- */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+}
+
+/* ---------- Tablet dưới 768px ---------- */
+@media (max-width: 768px) {
+    header .fa-bars {
+        display: block;
+    }
+
+    header .navbar {
+        position  : absolute;
+        top       : 100%;
+        left      : 0;
+        right     : 0;
+        background: #eee;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        clip-path : polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header #toggler:checked~.navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a {
+        margin    : 1.5rem;
+        padding   : 1.5rem;
+        background: #fff;
+        border    : 0.1rem solid rgba(0, 0, 0, 0.1);
+        display   : block;
+    }
+}
+
+/* ---------- Điện thoại nhỏ dưới 450px ---------- */
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+}

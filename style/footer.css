@@ -1,0 +1,69 @@
+.footer {
+    background-color: #f9f9f9;
+    color           : #333;
+    padding         : 3rem 2rem;
+    font-family     : 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: center;
+    gap            : 2rem;
+}
+
+.footer-column {
+    flex      : 1 1 250px;
+    min-width : 200px;
+    text-align: center;
+
+}
+
+.footer-column h3 {
+    font-size    : 2.5rem;
+    margin-bottom: 1rem;
+    color        : #b94360;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding   : 0;
+    margin    : 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color          : #333;
+    transition     : color 0.2s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #b94360;
+}
+
+.footer-column ul li a {
+    font-size      : 2rem;
+    /* Tăng lên từ 0.8rem hoặc 14px nếu đang thấp */
+    text-decoration: none;
+    color          : #333;
+    transition     : color 0.2s ease;
+}
+
+
+.footer-column img {
+    margin-top: 1rem;
+    max-width : 120px;
+}
+
+.footer-bottom {
+    margin-top : 2rem;
+    text-align : center;
+    font-size  : 2.5rem;
+    padding-top: 1rem;
+    border-top : 1px solid #ccc;
+    color      : #555;
+}
