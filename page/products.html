@@ -58,7 +58,7 @@
         <div class="box-container">
           <div class="box">
             <div class="image">
-              <img src="../image/km1.webp" alt="" />
+              <img src="/image/km1.webp" alt="" />
             </div>
             <div class="content">
               <h3>Pate cho chó con giống nhỏ 85gam</h3>
@@ -79,7 +79,7 @@
           </div>
           <div class="box">
             <div class="image">
-              <img src="../image/km2.jpg" alt="" />
+              <img src="/image/km2.jpg" alt="" />
             </div>
             <div class="content">
               <h3>Pate Mèo Lớn Trên 12 tháng sốt Gravy</h3>
@@ -100,7 +100,7 @@
           </div>
           <div class="box">
             <div class="image">
-              <img src="../image/km3.webp" alt="" />
+              <img src="/image/km3.webp" alt="" />
             </div>
             <div class="content">
               <h3>Mèo mẹ và mèo con trên 4 tháng</h3>
@@ -121,7 +121,7 @@
           </div>
           <div class="box">
             <div class="image">
-              <img src="../image/km4.webp" alt="" />
+              <img src="/image/km4.webp" alt="" />
             </div>
             <div class="content">
               <h3>
@@ -145,7 +145,7 @@
           </div>
           <div class="box">
             <div class="image">
-              <img src="../image/km5.webp" alt="" />
+              <img src="/image/km5.webp" alt="" />
             </div>
             <div class="content">
               <h3>
@@ -169,7 +169,7 @@
           </div>
           <div class="box">
             <div class="image">
-              <img src="../image/km6.webp" alt="" />
+              <img src="/image/km6.webp" alt="" />
             </div>
             <div class="content">
               <h3>Cát Đất Sét Mèo Aatas Bentonite 10L</h3>
@@ -190,7 +190,7 @@
           </div>
           <div class="box">
             <div class="image">
-              <img src="../image/km7.webp" alt="" />
+              <img src="/image/km7.webp" alt="" />
             </div>
             <div class="content">
               <h3>
@@ -213,7 +213,7 @@
           </div>
           <div class="box">
             <div class="image">
-              <img src="../image/km8.webp" alt="" />
+              <img src="/image/km8.webp" alt="" />
             </div>
             <div class="content">
               <h3>Lược Chải Lông Chó Mèo Cao Cấp DoggyMan Có Bấm Tách Lông</h3>
@@ -234,7 +234,7 @@
           </div>
           <div class="box">
             <div class="image">
-              <img src="../image/km9.webp" alt="" />
+              <img src="/image/km9.webp" alt="" />
             </div>
             <div class="content">
               <h3>Cần Câu Mèo Đính Chuông Lông Vũ</h3>
@@ -255,7 +255,7 @@
           </div>
           <div class="box">
             <div class="image">
-              <img src="../image/km10.webp" alt="" />
+              <img src="/image/km10.webp" alt="" />
             </div>
             <div class="content">
               <h3>Chuông Bấm Tròn Huấn Luyện Chó mèo</h3>
@@ -365,6 +365,31 @@
 
       // Gọi hàm cập nhật icon khi tải trang
       updateUserIcon();
+    </script>
+    <script>
+      // Xử lý tìm kiếm gần đúng
+      document
+        .querySelector(".search-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const searchInput = document
+            .querySelector(".search-input")
+            .value.toLowerCase()
+            .trim();
+          const productBoxes = document.querySelectorAll(".box");
+
+          productBoxes.forEach((box) => {
+            const productName = box
+              .querySelector("h3")
+              .textContent.toLowerCase();
+            // Kiểm tra xem tên sản phẩm có chứa từ khóa tìm kiếm gần đúng không
+            if (productName.includes(searchInput)) {
+              box.style.display = "block";
+            } else {
+              box.style.display = "none";
+            }
+          });
+        });
     </script>
   </body>
 </html>

@@ -5,7 +5,16 @@
 }
 
 .products .heading {
-    padding-top: 8rem;
+    padding-top: 1%;
+}
+
+.giagoc {
+    text-decoration: line-through;
+}
+
+.giaban {
+    color      : #ff0000;
+    font-weight: bold;
 }
 
 .products .box-container .box {

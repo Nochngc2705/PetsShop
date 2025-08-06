@@ -35,7 +35,9 @@
     border-radius : 10px;
     display       : flex;
     flex-direction: column;
+    align-items   : center;
 }
+
 
 .contact form .box {
     width        : 100%;
@@ -52,9 +54,12 @@
 }
 
 .contact form .btn {
-    margin-top: 1rem;
-    width     : 100%;
-    text-align: center;
+    margin-top   : 1rem;
+    width        : 30%;
+    height       : 30px;
+    text-align   : center;
+    border-radius: 5rem;
+    font-size    : 2rem;
 }
 
 .contact form .btn:hover {

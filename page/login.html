@@ -34,16 +34,6 @@
         <a href="reviews.html">Đánh giá</a>
         <a href="contact.html">Liên hệ</a>
       </nav>
-
-      <form method="get" class="search-form">
-        <input
-          type="text"
-          name="product_name"
-          class="search-input"
-          placeholder="Tên sản phẩm"
-        />
-        <button type="submit" class="search-btn">Tìm kiếm</button>
-      </form>
       <div class="icons">
         <a href="favorite.html" class="fas fa-heart"></a>
         <a href="cart.html" class="fas fa-shopping-cart"></a>
@@ -104,57 +94,6 @@
         </div>
       </footer>
     </div>
-
-    <script>
-      document
-        .getElementById("login-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          const username = document.getElementById("username").value;
-          const password = document.getElementById("password").value;
-
-          // Lấy danh sách tài khoản từ localStorage
-          const users = JSON.parse(localStorage.getItem("users")) || [];
-
-          // Kiểm tra thông tin đăng nhập
-          const user = users.find(
-            (user) => user.username === username && user.password === password
-          );
-
-          if (user) {
-            localStorage.setItem("loggedInUser", username);
-            alert("Đăng nhập thành công!");
-            window.location.href = "home.html";
-          } else {
-            alert("Tên đăng nhập hoặc mật khẩu không đúng!");
-          }
-        });
-
-      // Kiểm tra trạng thái đăng nhập để cập nhật icon user
-      function updateUserIcon() {
-        const loggedInUser = localStorage.getItem("loggedInUser");
-        const userIcon = document.getElementById("user-icon");
-        if (loggedInUser) {
-          userIcon.classList.remove("fa-user");
-          userIcon.classList.add("fa-sign-out-alt");
-          userIcon.title = "Đăng xuất";
-          userIcon.addEventListener("click", function (e) {
-            e.preventDefault();
-            localStorage.removeItem("loggedInUser");
-            alert("Đã đăng xuất!");
-            window.location.href = "login.html";
-          });
-        } else {
-          userIcon.classList.remove("fa-sign-out-alt");
-          userIcon.classList.add("fa-user");
-          userIcon.title = "Đăng nhập";
-          userIcon.href = "login.html";
-        }
-      }
-
-      // Gọi hàm cập nhật icon khi tải trang
-      updateUserIcon();
-    </script>
+    <script src="/admin_dashboard/javascript/script.js"></script>
   </body>
 </html>

@@ -4,8 +4,10 @@
    }
 
    .about .heading {
-       padding-top: 8rem;
+       padding-top: 1%;
    }
+
+
 
    .about .row {
        display        : flex;

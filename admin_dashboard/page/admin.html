@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quản lý Admin</title>
+    <link rel="stylesheet" href="/admin_dashboard/style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h2>Trang Quản Trị - Ruby Pets Shop</h2>
+        <button class="logout-btn" onclick="logout()">
+          <i class="fas fa-sign-out-alt"></i> Đăng xuất
+        </button>
+      </header>
+
+      <div class="section">
+        <h3>Thêm / Sửa Sản phẩm</h3>
+        <form id="productForm">
+          <input type="hidden" id="editIndex" />
+          <input
+            type="text"
+            id="productName"
+            placeholder="Tên sản phẩm"
+            required
+          />
+          <input
+            type="number"
+            id="productPrice"
+            placeholder="Giá bán (VNĐ)"
+            step="1000"
+            required
+          />
+          <input
+            type="number"
+            id="productOriginalPrice"
+            placeholder="Giá gốc (VNĐ)"
+            step="1000"
+            required
+          />
+          <input type="file" id="productImage" accept="image/*" required />
+          <button type="submit">
+            <i class="fas fa-save"></i> Lưu sản phẩm
+          </button>
+        </form>
+      </div>
+
+      <div class="section">
+        <h3>Danh sách sản phẩm</h3>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-box"
+          placeholder="Tìm theo tên..."
+        />
+        <table>
+          <thead>
+            <tr>
+              <th>Hình ảnh</th>
+              <th>Tên</th>
+              <th>Giá bán</th>
+              <th>Giá gốc</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="productList"></tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <h3>Đơn hàng đã đặt</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Danh sách sản phẩm</th>
+              <th>Xóa</th>
+            </tr>
+          </thead>
+          <tbody id="orderList"></tbody>
+        </table>
+      </div>
+
+      <div class="section stats">
+        <h3>Thống kê</h3>
+        <p>Tổng sản phẩm: <span id="totalProducts">0</span></p>
+        <p>Tổng đơn hàng: <span id="totalOrders">0</span></p>
+      </div>
+    </div>
+    <script src="/admin_dashboard/javascript/admin.js"></script>
+  </body>
+</html>
